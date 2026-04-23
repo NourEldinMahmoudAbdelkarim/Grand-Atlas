@@ -1,7 +1,15 @@
 import axios from 'axios';
 import { useAuthStore } from '../store/authStore';
 
-const API_BASE_URL = 'https://white-seahorse-266682.hostingersite.com/api/v1';
+/**
+ * Base URL for API requests.
+ *
+ * - In local dev, we use `/api/v1` and rely on the Vite proxy (avoids CORS).
+ * - In production, you can set `VITE_API_BASE_URL` to the full host URL.
+ */
+const API_BASE_URL =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, '') ||
+  '/api/v1';
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,

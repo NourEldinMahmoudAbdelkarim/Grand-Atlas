@@ -2,6 +2,7 @@ import apiClient from './apiClient';
 import type { Project } from '../types';
 
 export const projectService = {
+  /** GET /api/v1/projects/all-projects */
   getAll: async (): Promise<Project[]> => {
     const response = await apiClient.get<Project[]>('/projects/all-projects');
     return response.data;

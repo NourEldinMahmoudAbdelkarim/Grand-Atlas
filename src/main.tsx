@@ -16,7 +16,8 @@ import { ZonesPage } from './pages/ZonesPage';
 import { ContactPage } from './pages/ContactPage';
 
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
-import { AdminLogin } from './pages/admin/AdminLogin';
+import { LoginPage } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
 import { AdminLayout } from './components/layout/AdminLayout';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { ManageProjects } from './pages/admin/ManageProjects';
@@ -47,9 +48,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/zones" element={<ZonesPage />} />
           <Route path="/developers" element={<DevelopersPage />} />
           <Route path="/contact" element={<ContactPage />} />
-
-          {/* Admin Auth */}
-          <Route path="/login" element={<AdminLogin />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
           {/* Admin Routes */}
           <Route element={<ProtectedRoute />}>

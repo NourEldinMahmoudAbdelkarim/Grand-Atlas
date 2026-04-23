@@ -2,6 +2,7 @@ import apiClient from './apiClient';
 import type { Developer } from '../types';
 
 export const developerService = {
+  /** GET /api/v1/developer */
   getAll: async (): Promise<Developer[]> => {
     const response = await apiClient.get<Developer[]>('/developer');
     return response.data;

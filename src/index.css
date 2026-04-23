@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+  --color-brand: #a33636;
+  --color-brand-hover: #8a2d2d;
+}
 
 @layer base {
   * {
@@ -8,15 +15,15 @@
   
   html {
     scroll-behavior: smooth;
-    --brand-red: #8C1C1D;
-    --brand-red-hover: #731718;
-    --brand-gold: #C0AE96;
-    --brand-gold-hover: #A99882;
+    --brand-red: #a33636;
+    --brand-red-hover: #8a2d2d;
+    --brand-gold: #c9a96e;
+    --brand-gold-hover: #b3955a;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
-    @apply bg-stone-50 text-stone-900 antialiased;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    @apply bg-white text-stone-900 antialiased;
   }
 }
 
@@ -49,9 +56,9 @@
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--brand-gold);
+  background: var(--brand-red);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-gold-hover);
+  background: var(--brand-red-hover);
 }

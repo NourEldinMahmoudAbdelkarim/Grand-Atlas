@@ -2,6 +2,7 @@ import apiClient from './apiClient';
 import type { Zone } from '../types';
 
 export const zoneService = {
+  /** GET /api/v1/zone */
   getAll: async (): Promise<Zone[]> => {
     const response = await apiClient.get<Zone[]>('/zone');
     return response.data;

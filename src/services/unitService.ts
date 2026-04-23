@@ -2,8 +2,11 @@ import apiClient from './apiClient';
 import type { Unit, UnitFilters } from '../types';
 
 export const unitService = {
+  /** GET /api/v1/unit — default sort=asc; filters.sort overrides */
   getAll: async (filters?: UnitFilters): Promise<Unit[]> => {
-    const response = await apiClient.get<Unit[]>('/unit', { params: filters });
+    const response = await apiClient.get<Unit[]>('/unit', {
+      params: { sort: 'asc', ...filters },
+    });
     return response.data;
   },
 

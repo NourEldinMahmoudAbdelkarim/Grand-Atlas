@@ -7,12 +7,11 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Button variants definition
 const buttonVariants = {
   base: 'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-stone-50',
   variants: {
-    primary: 'bg-[#8C1C1D] text-white hover:bg-[#731718]', 
-    secondary: 'bg-transparent border border-[#8C1C1D] text-[#8C1C1D] hover:bg-[#fcf8f8]',
+    primary: 'bg-[#A33636] text-white hover:bg-[#8A2D2D]',
+    secondary: 'bg-transparent border border-[#A33636] text-[#A33636] hover:bg-stone-50',
     ghost: 'bg-transparent text-stone-900 hover:bg-stone-100',
     danger: 'bg-red-600 text-white hover:bg-red-700',
   },

@@ -11,15 +11,15 @@ export function AdminLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   if (!isAuthenticated) {
-    return <Navigate to="/admin/login" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   const navItems = [
-    { name: 'Dashboard', path: '/admin', icon: LayoutDashboard },
-    { name: 'Projects', path: '/admin/projects', icon: Building2 },
-    { name: 'Developers', path: '/admin/developers', icon: HardHat },
-    { name: 'Units', path: '/admin/units', icon: Home },
-    { name: 'Zones', path: '/admin/zones', icon: Map },
+    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
+    { name: 'Projects', path: '/dashboard/projects', icon: Building2 },
+    { name: 'Developers', path: '/dashboard/developers', icon: HardHat },
+    { name: 'Units', path: '/dashboard/units', icon: Home },
+    { name: 'Zones', path: '/dashboard/zones', icon: Map },
   ];
 
   return (
@@ -40,8 +40,9 @@ export function AdminLayout() {
          <div className="py-6 flex flex-col h-[calc(100vh-5rem)]">
             <nav className="flex-1 px-4 space-y-1">
                {navItems.map((item) => {
-                 const isActive = location.pathname === item.path || 
-                                 (item.path !== '/admin' && location.pathname.startsWith(item.path));
+                 const isActive =
+                   location.pathname === item.path ||
+                   (item.path !== '/dashboard' && location.pathname.startsWith(item.path));
                  const Icon = item.icon;
                  
                  return (
